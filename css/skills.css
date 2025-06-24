@@ -1,0 +1,96 @@
+.skills{
+    min-height: auto;
+    padding-bottom: 7rem;
+    background: var(--bg-color);
+}
+
+.skills h2{
+    display: inline-block;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.skills .skills-row{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5rem;
+}
+
+.skills-row .skills-column{
+    flex: 1 1 40rem;
+}
+
+.skills-column .title{
+    position: relative;
+    display: inline-block;
+    font-size: 2.5rem;
+    margin: 0 0 1.5rem;
+}
+
+.skills-column .skills-box{
+    position: relative;
+}
+
+.skills-box .skills-content{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    text-align: center;
+    border: none;
+    padding: 2rem;
+}
+
+.skills-box .skills-content::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background-color: var(--second-bg-color);
+    z-index: -1;
+    transition: 0.5s;
+}
+
+.skills-box .skills-content:hover::before{
+    width: 100%;
+}
+
+.skills-content .progress{
+    position: relative;
+    padding: 1.5rem 1rem;
+    border: 0.2rem solid var(--main-color);
+    border-radius: 0.6rem;
+    overflow: hidden;
+    z-index: 1;
+    transition: 0.3s ease;
+}
+
+.skills-content .progress h3{
+    font-size: 1.6rem;
+    margin: 0;
+    color: var(--text-color);
+    z-index: 2;
+    position: relative;
+}
+
+.skills-content .progress::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 100%;
+    background-color: var(--second-bg-color);
+    z-index: 0;
+    transition: 0.4s ease;
+}
+
+.skills-content .progress:hover::before {
+    width: 100%;
+}
+
+.skills-content .progress:hover h3 {
+    color: var(--main-color);
+}
+
